@@ -31,9 +31,10 @@ module.exports = app => {
 
     debug('%s %s get user: %j', req.method, req.url, user);
     const isValidUser = user.email.includes('@wavenet.com.tw') || user.email.includes('@punwave.com');
-    if (!isValidUser) return done(false);
 
     // let passport do verify and call verify hook
-    app.passport.doVerify(req, user, done);
+    return isValidUser
+      ? app.passport.doVerify(req, user, done)
+      : app.passport.doVerify(req, { provider: 'wavenet' }, done);
   }));
 };
