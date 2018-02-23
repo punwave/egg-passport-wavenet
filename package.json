@@ -1,6 +1,6 @@
 {
   "name": "egg-passport-wavenet",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "wavenet passport plugin for egg",
   "eggPlugin": {
     "name": "passportWavenet",
