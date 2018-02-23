@@ -20,9 +20,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-passport-wavenet.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-passport-wavenet
 
-<!--
-Description here.
--->
+wavenet passport plugin for egg
 
 ## Install
 
@@ -45,14 +43,12 @@ exports.passportWavenet = {
 ```js
 // {app_root}/config/config.default.js
 exports.passportWavenet = {
+  key: 'your oauth key',
+  secret: 'your oauth secret',
 };
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
-
-## Example
-
-<!-- example here -->
 
 ## Questions & Suggestions
 
