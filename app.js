@@ -28,11 +28,12 @@ module.exports = app => {
       params,
       profile,
     };
-    debug('%s %s get user: %j', req.method, req.url, user);
 
+    debug('%s %s get user: %j', req.method, req.url, user);
     const isValidUser = user.email.includes('@wavenet.com.tw') || user.email.includes('@punwave.com');
+    if (!isValidUser) return done(false);
 
     // let passport do verify and call verify hook
-    app.passport.doVerify(req, isValidUser ? user : null, done);
+    app.passport.doVerify(req, user, done);
   }));
 };
